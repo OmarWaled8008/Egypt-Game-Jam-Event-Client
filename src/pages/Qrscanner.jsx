@@ -1,11 +1,13 @@
 import { Scanner } from "@yudiel/react-qr-scanner";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Checkin2 from "../components/Checkin2";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { ApiContext } from "../contexts/contexts";
 
 export default function Qrscanner() {
   const [lastScanned, setLastScanned] = useState(null);
+  const { generalData, loading, error } = useContext(ApiContext);
 
   const handleScan = async (result) => {
     if (!result) return;
@@ -32,7 +34,6 @@ export default function Qrscanner() {
             },
           },
         );
-
       } else {
         toast.error(`❌ ${data.message}`);
       }
@@ -86,14 +87,18 @@ export default function Qrscanner() {
                         person
                       </span>
                       <span className="text-sm">Checked In</span>
-                      <span className="text-sm">0</span>
+                      <span className="text-sm">
+                        {generalData?.data?.checkedInAttendees}
+                      </span>
                     </label>
                     <label className="flex cursor-pointer items-center justify-center gap-2 px-6 py-2 rounded-lg text-slate-600 dark:text-primary/60 hover:text-primary transition-all font-bold">
                       <span className="material-symbols-outlined text-sm">
                         person
                       </span>
                       <span className="text-sm">Not Checked In</span>
-                      <span className="text-sm">0</span>
+                      <span className="text-sm">
+                        {generalData?.data?.notCheckedInAttendees}
+                      </span>
                     </label>
                   </div>
                 </div>
