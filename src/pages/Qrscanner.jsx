@@ -68,57 +68,22 @@ export default function Qrscanner() {
             <main class="flex-1 flex flex-col items-center justify-start py-8 px-4 lg:px-40 gap-8">
               <div class="w-full max-w-[960px] flex flex-col items-center">
                 <div class="w-full relative flex flex-col items-center">
-                  <div class="w-full aspect-video md:aspect-[21/9] bg-black rounded-2xl overflow-hidden relative border-2 border-primary/20 scanner-frame group">
+                  <div class="w-full  aspect-video md:aspect-[21/9] bg-black rounded-2xl overflow-hidden relative border-2 border-primary/20 scanner-frame group">
                     <div
                       class="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-80 transition-opacity"
                       data-alt="Crowded event audience perspective"
                       style={{
                         backgroundImage: 'url("/GDA_LOGO_THEME.png")',
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
                       }}
                     >
                       <Scanner
                         onScan={handleScan}
                         onError={(e) => console.error(e)}
-                        constraints={{ facingMode: { ideal: "environment" } }} // back camera
+                        constraints={{ facingMode: { ideal: "environment" } }} 
                         styles={{ container: { width: "50%", margin: "auto" } }}
                       />
-                    </div>
-                  </div>
-                  <div class="flex flex-col md:flex-row items-center justify-between w-full mt-6 gap-4">
-                    <div class="flex bg-slate-200 dark:bg-primary/5 p-1 rounded-xl w-full md:w-auto">
-                      <label class="flex cursor-pointer items-center justify-center gap-2 px-6 py-2 rounded-lg bg-primary text-background-dark shadow-lg transition-all font-bold">
-                        <span class="material-symbols-outlined text-sm">
-                          photo_camera_back
-                        </span>
-                        <span class="text-sm">Rear Camera</span>
-                        <input
-                          checked
-                          class="hidden"
-                          name="camera"
-                          type="radio"
-                        />
-                      </label>
-                      <label class="flex cursor-pointer items-center justify-center gap-2 px-6 py-2 rounded-lg text-slate-600 dark:text-primary/60 hover:text-primary transition-all font-bold">
-                        <span class="material-symbols-outlined text-sm">
-                          account_circle
-                        </span>
-                        <span class="text-sm">Front Camera</span>
-                        <input class="hidden" name="camera" type="radio" />
-                      </label>
-                    </div>
-                    <div class="flex gap-2 w-full md:w-auto">
-                      <div class="relative flex-1">
-                        <input
-                          class="w-full bg-white dark:bg-background-dark border border-slate-300 dark:border-primary/30 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-primary dark:text-white text-sm"
-                          placeholder="Enter Ticket ID Manualy..."
-                          type="text"
-                        />
-                      </div>
-                      <button class="bg-primary hover:bg-primary/80 text-background-dark font-bold px-4 py-2 rounded-lg transition-colors flex items-center gap-2">
-                        <span class="material-symbols-outlined text-lg">
-                          arrow_forward
-                        </span>
-                      </button>
                     </div>
                   </div>
                 </div>
