@@ -10,7 +10,6 @@ export default function Login() {
       const response = await axios.post(
         "https://egypt-game-jam-event-backend-production.up.railway.app/api/v1/attendee/login",
         { securityKey },
-        { withCredentials: true },
       );
       console.log(response);
     } catch (err) {
