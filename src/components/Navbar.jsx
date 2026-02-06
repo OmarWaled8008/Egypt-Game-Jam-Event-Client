@@ -45,6 +45,34 @@ export default function Navbar() {
                 Attendees
               </a> */}
             </nav>
+            <nav className="flex md:hidden items-center gap-6">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-sm font-medium text-primary border-b-2 border-primary pb-1"
+                    : "text-sm font-medium hover:text-primary transition-colors"
+                }
+                to="/dashboard"
+              >
+                Dashboard
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-sm font-medium text-primary border-b-2 border-primary pb-1"
+                    : "text-sm font-medium hover:text-primary transition-colors"
+                }
+                to="/qrscanner"
+              >
+                Qr Scanner
+              </NavLink>
+              {/* <a
+                className="text-sm font-medium hover:text-primary transition-colors"
+                href="#"
+              >
+                Attendees
+              </a> */}
+            </nav>
           </div>
         </div>
       </header>

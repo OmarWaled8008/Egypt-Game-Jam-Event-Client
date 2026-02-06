@@ -67,7 +67,24 @@
         background: #493b22;
         border-radius: 10px;
       }
-
+      .scanner-frame {
+        box-shadow:
+          0 0 20px rgba(244, 168, 37, 0.4),
+          inset 0 0 15px rgba(244, 168, 37, 0.2);
+      }
+      .scan-line {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          #f4a825,
+          transparent
+        );
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+      }
       .chart-glow {
         filter: drop-shadow(0 0 8px rgba(244, 168, 37, 0.3));
       }
