@@ -1,9 +1,9 @@
 import { Scanner } from "@yudiel/react-qr-scanner";
 import React, { useState } from "react";
 import Checkin2 from "../components/Checkin2";
+import toast from "react-hot-toast";
 
 export default function Qrscanner() {
-  const [message, setMessage] = useState("");
   const [lastScanned, setLastScanned] = useState(null);
 
   const handleScan = async (result) => {
@@ -17,11 +17,12 @@ export default function Qrscanner() {
 
     try {
       const response = await fetch(
-        `${qrData}`, // safer than full URL in QR
+        `${qrData}`, 
         {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
           },
         },
       );
@@ -29,12 +30,12 @@ export default function Qrscanner() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("✅ Check-in successful");
+        toast.success("✅ " + data.message);
       } else {
-        setMessage("⚠️ " + data.message);
+        toast.error("⚠️ " + data.message);
       }
     } catch (err) {
-      setMessage("❌ Network error");
+      toast.error("❌ Network error");
       console.log(err);
     }
 

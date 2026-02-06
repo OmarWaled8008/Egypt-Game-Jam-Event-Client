@@ -6,11 +6,16 @@ import ApiProvider from "./contexts/apiProvider";
 import Qrscanner from "./pages/Qrscanner";
 import Attendees from "./pages/Attendees";
 import { Toaster } from "react-hot-toast";
+import Protectedroute from "./components/Protectedroute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <Protectedroute>
+        <Layout />
+      </Protectedroute>
+    ),
     children: [
       {
         index: true,
@@ -43,23 +48,12 @@ function App() {
         <Toaster
           position="top-center"
           toastOptions={{
-            className:
-              "bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg border border-white/20",
-            duration: 3000,
             style: {
-              fontFamily: "Space Grotesk, sans-serif",
-            },
-            success: {
-              iconTheme: {
-                primary: "#ffffff",
-                secondary: "#22c55e",
-              },
-            },
-            error: {
-              iconTheme: {
-                primary: "#ffffff",
-                secondary: "#ef4444",
-              },
+              background: "#2a1328",
+              color: "#fff",
+              border: "1px solid #ffbf00",
+              padding: "16px",
+              borderRadius: "15px",
             },
           }}
         />

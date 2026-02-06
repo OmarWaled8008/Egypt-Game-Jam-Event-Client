@@ -1,18 +1,23 @@
 import axios from "axios";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 export default function Login() {
   const [securityKey, setSecurityKey] = useState("");
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
+      const { data } = await axios.post(
         "https://egypt-game-jam-event-backend-production.up.railway.app/api/v1/attendee/login",
         { securityKey },
       );
-
-      console.log(response);
+      localStorage.setItem("authToken", data.token);
+      toast.success(data.message);
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 500);
     } catch (err) {
       console.log(err);
     }
