@@ -60,12 +60,6 @@ export default function Qrscanner() {
       <div className="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-white">
         <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
           <div className="layout-container flex h-full grow flex-col">
-            {/* <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
-              <div className="bg-green-500/90 backdrop-blur shadow-lg text-white px-6 py-3 rounded-xl border border-white/20 flex items-center gap-3 animate-bounce">
-                <span className="material-symbols-outlined">check_circle</span>
-                <span className="font-bold">Check-in Successful</span>
-              </div>
-            </div> */}
             <main className="flex-1 flex flex-col items-center justify-start py-8 px-4 lg:px-40 gap-8">
               <div className="w-full max-w-[960px] flex flex-col items-center">
                 <div className="w-full relative flex flex-col items-center">
