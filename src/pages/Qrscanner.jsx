@@ -6,17 +6,13 @@ import axios from "axios";
 
 export default function Qrscanner() {
   const [lastScanned, setLastScanned] = useState(null);
-  console.log("Saved token:", localStorage.getItem("authToken"));
 
   const handleScan = async (result) => {
     if (!result) return;
-
     const qrData = result[0]?.rawValue;
     console.log(qrData);
-    // Prevent multiple scans of same QR
-    if (qrData === lastScanned) return;
+    if (qrData === lastScanned) return toast.error("❌ Already scanned");
     setLastScanned(qrData);
-
     try {
       const response = await axios.get(`${qrData}`, {
         headers: {
@@ -24,36 +20,30 @@ export default function Qrscanner() {
         },
       });
       const data = response.data;
-      console.log(data);
+      if (data.success) {
+        toast.success(
+          `✅ ${data.message} (${data.data.attendee.firstName} ${data.data.attendee.lastName})`,
+          {
+            style: {
+              minWidth: "420px",
+              maxWidth: "520px",
+              whiteSpace: "normal",
+              wordBreak: "break-word",
+            },
+          },
+        );
 
-      if (response.ok) {
-        toast.success("✅ " + data.message);
       } else {
-        toast.error("⚠️ " + data.message);
+        toast.error(`❌ ${data.message}`);
       }
     } catch (err) {
       toast.error("❌ Network error");
       console.log(err);
     }
-
-    // Allow scanning again after 2 sec
     setTimeout(() => setLastScanned(null), 2000);
   };
 
   return (
-    // <div style={{ textAlign: "center" }}>
-    //   <h2>Event Check-in Scanner</h2>
-
-    //   <Scanner
-    //     onScan={handleScan}
-    //     onError={(e) => console.error(e)}
-    //     constraints={{ facingMode: { ideal: "environment" } }} // back camera
-    //     styles={{ container: { width: 300, margin: "auto" } }}
-    //   />
-
-    //   <h3>{message}</h3>
-    // </div>
-
     <>
       <div className="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-white">
         <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
