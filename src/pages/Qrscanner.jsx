@@ -73,28 +73,15 @@ export default function Qrscanner() {
                       class="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-80 transition-opacity"
                       data-alt="Crowded event audience perspective"
                       style={{
-                        backgroundImage:
-                          'url("/GDA_LOGO_THEME.png")',
+                        backgroundImage: 'url("/GDA_LOGO_THEME.png")',
                       }}
                     >
                       <Scanner
                         onScan={handleScan}
                         onError={(e) => console.error(e)}
                         constraints={{ facingMode: { ideal: "environment" } }} // back camera
-                        styles={{ container: { width: "38%", margin: "auto" } }}
+                        styles={{ container: { width: "50%", margin: "auto" } }}
                       />
-                    </div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                      <div class="w-64 h-64 border-2 border-primary/60 relative rounded-xl flex items-center justify-center">
-                        <div class="scan-line"></div>
-                        <div class="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-primary rounded-tl-lg"></div>
-                        <div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-primary rounded-tr-lg"></div>
-                        <div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-primary rounded-bl-lg"></div>
-                        <div class="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-primary rounded-br-lg"></div>
-                        <span class="text-primary text-[10px] font-bold uppercase tracking-widest mt-72 whitespace-nowrap bg-background-dark/80 px-4 py-1 rounded-full">
-                          Align QR Code within Frame
-                        </span>
-                      </div>
                     </div>
                   </div>
                   <div class="flex flex-col md:flex-row items-center justify-between w-full mt-6 gap-4">
