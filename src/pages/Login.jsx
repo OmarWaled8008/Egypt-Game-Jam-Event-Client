@@ -13,7 +13,7 @@ export default function Login() {
         "https://egypt-game-jam-event-backend-production.up.railway.app/api/v1/attendee/login",
         { securityKey },
       );
-      localStorage.setItem("authToken", data.token);
+      localStorage.setItem("authToken", data.data.token);
       toast.success(data.message);
       setTimeout(() => {
         navigate("/dashboard");

@@ -2,32 +2,29 @@ import { Scanner } from "@yudiel/react-qr-scanner";
 import React, { useState } from "react";
 import Checkin2 from "../components/Checkin2";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 export default function Qrscanner() {
   const [lastScanned, setLastScanned] = useState(null);
+  console.log("Saved token:", localStorage.getItem("authToken"));
 
   const handleScan = async (result) => {
     if (!result) return;
 
     const qrData = result[0]?.rawValue;
-
+    console.log(qrData);
     // Prevent multiple scans of same QR
     if (qrData === lastScanned) return;
     setLastScanned(qrData);
 
     try {
-      const response = await fetch(
-        `${qrData}`, 
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          },
+      const response = await axios.get(`${qrData}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
-      );
-
-      const data = await response.json();
+      });
+      const data = response.data;
+      console.log(data);
 
       if (response.ok) {
         toast.success("✅ " + data.message);
@@ -114,7 +111,6 @@ export default function Qrscanner() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <Checkin2 />
-                    
                   </div>
                 </div>
               </div>
