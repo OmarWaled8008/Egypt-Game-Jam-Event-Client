@@ -48,7 +48,7 @@ export default function Qrscanner() {
       <Scanner
         onScan={handleScan}
         onError={(e) => console.error(e)}
-        constraints={{ facingMode: "environment" }} // back camera
+        constraints={{ facingMode: { ideal: "environment" } }} // back camera
         styles={{ container: { width: 300, margin: "auto" } }}
       />
 
