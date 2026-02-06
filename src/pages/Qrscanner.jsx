@@ -37,7 +37,14 @@ export default function Qrscanner() {
         toast.error(`❌ ${data.message}`);
       }
     } catch (err) {
-      toast.error("❌ Network error");
+      toast.error(`❌ ${err.response?.data?.message || "Scan failed"}`, {
+        style: {
+          minWidth: "420px",
+          maxWidth: "520px",
+          whiteSpace: "normal",
+          wordBreak: "break-word",
+        },
+      });
       console.log(err);
     }
     setTimeout(() => setLastScanned(null), 2000);
