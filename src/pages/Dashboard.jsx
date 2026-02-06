@@ -16,6 +16,16 @@ export default function Dashboard() {
 
     return formattedTime;
   }
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-16 w-16 mb-4 mx-auto"></div>
+          <h2 className="text-xl font-semibold">Loading dashboard data...</h2>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -214,7 +224,6 @@ export default function Dashboard() {
 
               <div className="flex flex-col justify-center bg-background-light dark:bg-card-dark border border-slate-200 dark:border-white/5 p-6 rounded-xl relative overflow-hidden group">
                 <div className="flex justify-between items-start mb-4">
-                  
                   <div className="p-2 rounded-lg bg-green-600/10 text-green-600">
                     <span className="material-symbols-outlined">schedule</span>
                   </div>
