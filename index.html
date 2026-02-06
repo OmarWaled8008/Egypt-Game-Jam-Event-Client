@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/GDA_LOGO_THEME.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EGJ2026</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ffbf00",
+              "amber-glow": "#FF8C00",
+              "background-light": "#f8f8f5",
+              "background-dark": "#2a1328",
+              "card-dark": "#1e0e1d",
+              "accent-purple": "#2d1b4d",
+              charcoal: "#291e28",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .glow-border:focus-within {
+        box-shadow: 0 0 15px rgba(255, 191, 0, 0.3);
+        border-color: #ffbf00;
+      }
+      .pulse-lock {
+        animation: pulse 3s infinite ease-in-out;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #493b22;
+        border-radius: 10px;
+      }
+
+      .chart-glow {
+        filter: drop-shadow(0 0 8px rgba(244, 168, 37, 0.3));
+      }
+      .bg-gradient-amber {
+        background: linear-gradient(
+          180deg,
+          rgba(244, 168, 37, 0.15) 0%,
+          rgba(244, 168, 37, 0) 100%
+        );
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.6;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.05);
+          text-shadow: 0 0 10px #ffbf00;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
