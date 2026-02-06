@@ -81,10 +81,28 @@ export default function Qrscanner() {
                       <Scanner
                         onScan={handleScan}
                         onError={(e) => console.error(e)}
-                        constraints={{ facingMode: { ideal: "environment" } }} 
+                        constraints={{ facingMode: { ideal: "environment" } }}
                         styles={{ container: { width: "50%", margin: "auto" } }}
                       />
                     </div>
+                  </div>
+                </div>
+                <div class="flex md:flex-row items-center justify-center w-full mt-6 gap-4">
+                  <div class="flex justify-center bg-slate-200 dark:bg-primary/5 p-1 rounded-xl w-full md:w-auto">
+                    <label class="flex cursor-pointer items-center justify-center gap-2 px-6 py-2 rounded-lg bg-primary text-background-dark shadow-lg transition-all font-bold">
+                      <span class="material-symbols-outlined text-sm">
+                        person
+                      </span>
+                      <span class="text-sm">Checked In</span>
+                      <span class="text-sm">0</span>
+                    </label>
+                    <label class="flex cursor-pointer items-center justify-center gap-2 px-6 py-2 rounded-lg text-slate-600 dark:text-primary/60 hover:text-primary transition-all font-bold">
+                      <span class="material-symbols-outlined text-sm">
+                        person
+                      </span>
+                      <span class="text-sm">Not Checked In</span>
+                      <span class="text-sm">0</span>
+                    </label>
                   </div>
                 </div>
                 <div class="w-full mt-12">
