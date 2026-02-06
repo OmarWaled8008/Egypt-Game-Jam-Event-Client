@@ -3,7 +3,8 @@ import { ApiContext } from "./contexts";
 import axios from "axios";
 
 export default function ApiProvider({ children }) {
-  const apiBaseUrl = "http://localhost:6060/api/v1";
+  const apiBaseUrl =
+    "https://egypt-game-jam-event-backend-production.up.railway.app/api/v1";
   const [generalData, setGeneralData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
