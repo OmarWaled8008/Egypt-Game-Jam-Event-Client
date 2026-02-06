@@ -45,7 +45,7 @@ export default function Navbar() {
                 Attendees
               </a> */}
             </nav>
-            <nav className="flex md:hidden items-center gap-6">
+            <nav className="flex md:hidden items-center gap-6 absolute right-[50%] translate-x-[50%] top-16 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md rounded-lg px-4 py-2">
               <NavLink
                 className={({ isActive }) =>
                   isActive
