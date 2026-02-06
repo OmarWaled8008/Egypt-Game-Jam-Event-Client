@@ -2,14 +2,15 @@ import axios from "axios";
 import { useState } from "react";
 
 export default function Login() {
-  const [password, setPassword] = useState("");
+  const [securityKey, setSecurityKey] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
         "https://egypt-game-jam-event-backend-production.up.railway.app/api/v1/attendee/login",
-        { password },
+        { securityKey },
+        { withCredentials: true },
       );
       console.log(response);
     } catch (err) {
@@ -50,8 +51,8 @@ export default function Login() {
                     placeholder="Enter Security Key..."
                     type="password"
                     name="securityKey"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={securityKey}
+                    onChange={(e) => setSecurityKey(e.target.value)}
                     required
                   />
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20">
