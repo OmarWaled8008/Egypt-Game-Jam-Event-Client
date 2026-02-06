@@ -212,7 +212,7 @@ export default function Dashboard() {
                   Less Common Check-in Time
                 </p>
                 <h3 className="text-3xl font-bold mt-1">
-                  {formatHourTo12Hour(generalData?.data?.lessCommonHour[0]._id)}
+                  {formatHourTo12Hour(generalData?.data?.lessCommonHour[0]?._id)}
                 </h3>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-accent-purple/20">
                   <div
@@ -235,7 +235,7 @@ export default function Dashboard() {
                   Peak Check-in Time
                 </p>
                 <h3 className="text-3xl font-bold mt-1">
-                  {formatHourTo12Hour(generalData?.data?.peakCheckIn[0]._id)}
+                  {formatHourTo12Hour(generalData?.data?.peakCheckIn[0]?._id)}
                 </h3>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-accent-purple/20">
                   <div
