@@ -137,6 +137,9 @@ The application communicates with the backend API through the `apiProvider` cont
 4. Commit your changes
 5. Push to your fork and submit a pull request
 
+![alt text]([https://github.com/[OmarWaled8008]/[Egypt-Game-Jam-Event-Backend]/blob/main/image.jpg?raw=true](https://github.com/OmarWaled8008/Egypt-Game-Jam-Event-Client/blob/main/WhatsApp%20Image%202026-06-10%20at%201.16.54%20PM.jpeg))
+
+
 ## License
 
 This project is part of the Egypt Game Jam event management system.
