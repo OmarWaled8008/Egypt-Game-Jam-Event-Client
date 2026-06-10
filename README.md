@@ -155,6 +155,14 @@ The application communicates with the backend API through the `apiProvider` cont
   <img src="WhatsApp Image 2026-06-10 at 1.18.15 PM (2).jpeg" width="700"/>
 </p>
 
+<p align="center">
+  <img src="WhatsApp Image 2026-06-10 at 1.18.15 PM (3).jpeg" width="700"/>
+</p>
+
+<p align="center">
+  <img src="WhatsApp Image 2026-06-10 at 1.18.15 PM.jpeg" width="700"/>
+</p>
+
 ## License
 
 This project is part of the Egypt Game Jam event management system.
