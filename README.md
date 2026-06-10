@@ -1,4 +1,6 @@
-# Egypt Game Jam Event Check-In Client
+# Egypt Game Jam Event Check-In Client 
+Backend Repository: Egypt-Game-Jam-Event-Backend
+
 
 A modern React + Vite web application for managing event check-ins with QR code scanning capabilities. This is the frontend client for the Egypt Game Jam Event management system.
 
