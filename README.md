@@ -137,12 +137,24 @@ The application communicates with the backend API through the `apiProvider` cont
 4. Commit your changes
 5. Push to your fork and submit a pull request
 
+## Screenshots
+
 <p align="center">
-  <img src="" width="45%" />
-  <img src="./screenshots/dashboard.png" width="45%" />
+  <img src="Screenshot_20260513_233150_Gmail.jpg.jpeg" width="700"/>
 </p>
 
-[./screenshots/home.png](https://github.com/OmarWaled8008/Egypt-Game-Jam-Event-Client/blob/main/Screenshot_20260513_233150_Gmail.jpg.jpeg)
+<p align="center">
+  <img src="WhatsApp Image 2026-06-10 at 1.16.54 PM.jpeg" width="700"/>
+</p>
+
+<p align="center">
+  <img src="WhatsApp Image 2026-06-10 at 1.18.15 PM (1).jpeg" width="700"/>
+</p>
+
+<p align="center">
+  <img src="WhatsApp Image 2026-06-10 at 1.18.15 PM (2).jpeg" width="700"/>
+</p>
+
 ## License
 
 This project is part of the Egypt Game Jam event management system.
